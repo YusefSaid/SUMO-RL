@@ -1,0 +1,4 @@
+algorithm: ppo
+reward_type: simple
+avg_reward: -256.3
+avg_waiting_time: 13.8

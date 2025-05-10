@@ -1,0 +1,4 @@
+algorithm: a2c
+reward_type: multi_component
+avg_reward: -215.6
+avg_waiting_time: 10.3

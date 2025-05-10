@@ -1,0 +1,4 @@
+algorithm: ppo
+reward_type: difference
+avg_reward: -220.1
+avg_waiting_time: 11.2

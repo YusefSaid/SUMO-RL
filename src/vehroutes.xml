@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-05-10 21:12:02 by Eclipse SUMO sumo Version 1.22.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="net.net.xml"/>
+        <route-files value="simple_routes.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="tripinfo.xml"/>
+        <vehroute-output value="vehroutes.xml"/>
+        <vehroute-output.exit-times value="true"/>
+        <vehroute-output.stop-edges value="true"/>
+        <stop-output value="stopinfo.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="1000"/>
+    </time>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="46973"/>
+    </traci_server>
+
+</sumoConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="vehicle_0" type="car" depart="0.00" arrival="13.00">
+        <route edges="834845345#2 834845345#3.0" exitTimes="7.00 13.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_3" type="car" depart="30.00" arrival="47.00">
+        <route edges="gneE11 gneE1" exitTimes="43.00 47.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_2" type="car" depart="20.00" arrival="63.00">
+        <route edges="gneE11 115872656#13.8" exitTimes="34.00 63.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_5" type="car" depart="50.00" arrival="85.00">
+        <route edges="-638636924#1.9 115872656#11" exitTimes="80.00 85.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_4" type="car" depart="40.00" arrival="86.00">
+        <route edges="-638636924#1.9 -660891910#1" exitTimes="80.00 86.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_6" type="car" depart="60.00" arrival="88.00">
+        <route edges="-638636924#1.9 834845345#6" exitTimes="84.00 88.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_7" type="car" depart="70.00" arrival="105.00">
+        <route edges="115872656#10.14 115872656#11" exitTimes="100.00 105.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_9" type="car" depart="90.00" arrival="105.00">
+        <route edges="834845345#8.108 834845345#9" exitTimes="100.00 105.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_10" type="car" depart="100.00" arrival="120.00">
+        <route edges="834845345#8.108 gneE19" exitTimes="115.00 120.00"/>
+    </vehicle>
+
+    <vehicle id="vehicle_8" type="car" depart="80.00" arrival="122.00">
+        <route edges="115872656#10.14 638636924#1" exitTimes="115.00 122.00"/>
+    </vehicle>
+
+</routes>

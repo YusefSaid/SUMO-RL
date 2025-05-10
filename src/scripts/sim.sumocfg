@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="net.net.xml"/>
+        <route-files value="simple_routes.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="1000"/>
+    </time>
+    <output>
+        <tripinfo-output value="tripinfo.xml"/>
+        <vehroute-output value="vehroutes.xml"/>
+        <vehroute-output.exit-times value="true"/>
+        <vehroute-output.stop-edges value="true"/>
+        <stop-output value="stopinfo.xml"/>
+    </output>
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+</configuration>

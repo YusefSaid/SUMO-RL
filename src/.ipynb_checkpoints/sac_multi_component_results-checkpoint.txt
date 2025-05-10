@@ -1,0 +1,4 @@
+algorithm: sac
+reward_type: multi_component
+avg_reward: -182.4
+avg_waiting_time: 8.7
