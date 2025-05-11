@@ -1,44 +1,28 @@
-# run_experiments.py
+# V3_run_experiments.py
 import os
 import time
 import subprocess
 
-# Define algorithms and reward functions to test
-algorithms = ['ppo', 'sac', 'a2c']
+# Define algorithms and reward functions to test - SAC removed
+algorithms = ['ppo', 'a2c']  # Removed 'sac'
 reward_types = ['simple', 'multi_component', 'difference', 'traffic_flow', 'balanced_junction']
 
 # Timesteps for training (reduced for quicker results)
-timesteps = 20000
+timesteps = 50000
 
-# Results tracking
+# Results tracking - pre-populate with the models you've already trained
 results = []
-
-# Add the new reward functions
-print("Step 1: Updating reward_functions.py with new reward functions...")
-# You would need to manually add the new reward functions to reward_functions.py
-
-# Train all combinations
-print("\nStep 2: Training all algorithm and reward function combinations...")
 for algorithm in algorithms:
     for reward_type in reward_types:
         model_name = f"{algorithm}_{reward_type}"
-        print(f"\nTraining {model_name}...")
-        
-        # Train the model
-        subprocess.run([
-            'python3', 'train_all_algorithms.py',
-            '--algorithm', algorithm,
-            '--reward', reward_type,
-            '--timesteps', str(timesteps),
-            '--name', model_name
-        ])
-        
-        print(f"Completed training {model_name}")
         results.append({
             'algorithm': algorithm,
             'reward_type': reward_type,
             'model_name': model_name
         })
+
+# Skip the training part completely
+print("Skipping training step since models have already been trained...")
 
 # Evaluate all models
 print("\nStep 3: Evaluating all trained models...")
@@ -49,9 +33,9 @@ for result in results:
     
     print(f"\nEvaluating {model_name}...")
     
-    # Evaluate the model
+    # Evaluate the model - using V2_evaluate_models.py instead of evaluate_models.py
     subprocess.run([
-        'python3', 'evaluate_models.py',
+        'python3', 'V2_evaluate_models.py',
         '--model', model_name,
         '--algorithm', algorithm,
         '--reward', reward_type,
@@ -62,6 +46,6 @@ for result in results:
 
 # Compare all results
 print("\nStep 4: Comparing all evaluation results...")
-subprocess.run(['python3', '../scripts/compare_all_results.py'])
-
+# Using V2_compare_all_results.py instead of compare_all_results.py
+subprocess.run(['python3', 'V2_compare_all_results.py'])
 print("\nAll experiments completed! Check the comparison results and graphs.")

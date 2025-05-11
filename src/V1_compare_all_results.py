@@ -2,14 +2,36 @@ import os
 import xml.etree.ElementTree as ET
 import numpy as np
 import matplotlib.pyplot as plt
+import glob
 
 # List of result files to analyze
 result_files = {
-    "RL Model": "tripinfo.xml",
-    "60s Fixed Cycle": "baseline_60s_tripinfo.xml",
-    "90s Fixed Cycle": "baseline_90s_tripinfo.xml",
-    "120s Fixed Cycle": "baseline_120s_tripinfo.xml"
+    # PPO
+    "PPO (simple)"            : "ppo_simple_tripinfo.xml",
+    "PPO (multi-component)"   : "ppo_multi_component_tripinfo.xml",
+    "PPO (difference)"        : "ppo_difference_tripinfo.xml",
+    "PPO (traffic_flow)"      : "ppo_traffic_flow_tripinfo.xml",
+    "PPO (balanced_junction)" : "ppo_balanced_junction_tripinfo.xml",
+
+    # A2C
+    "A2C (simple)"            : "a2c_simple_tripinfo.xml",
+    "A2C (multi-component)"   : "a2c_multi_component_tripinfo.xml",
+    "A2C (difference)"        : "a2c_difference_tripinfo.xml",
+    "A2C (traffic_flow)"      : "a2c_traffic_flow_tripinfo.xml",
+    "A2C (balanced_junction)" : "a2c_balanced_junction_tripinfo.xml",
+
+    # SAC (once you re-train & evaluate)
+    "SAC (simple)"            : "sac_simple_tripinfo.xml",
+    "SAC (multi-component)"   : "sac_multi_component_tripinfo.xml",
+    "SAC (difference)"        : "sac_difference_tripinfo.xml",
+    "SAC (traffic_flow)"      : "sac_traffic_flow_tripinfo.xml",
+    "SAC (balanced_junction)" : "sac_balanced_junction_tripinfo.xml",
+        fn.replace("_tripinfo.xml","").upper(): fn
+    for fn in glob.glob("*_tripinfo.xml")
 }
+
+plt.xticks(rotation=30, ha="right")
+plt.tight_layout()
 
 # Function to analyze a single tripinfo file
 def analyze_tripinfo(file_path, label):
