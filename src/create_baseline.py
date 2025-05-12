@@ -50,6 +50,7 @@ def create_synthetic_tripinfo(cycle_length):
     return True
 
 # Create baselines with different cycle lengths
+create_synthetic_tripinfo(30)
 create_synthetic_tripinfo(60)
 create_synthetic_tripinfo(90)
 create_synthetic_tripinfo(120)
