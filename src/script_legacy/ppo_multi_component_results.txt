@@ -1,0 +1,4 @@
+algorithm: ppo
+reward_type: multi_component
+avg_reward: -198.7
+avg_waiting_time: 9.5

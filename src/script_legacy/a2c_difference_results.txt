@@ -1,0 +1,4 @@
+algorithm: a2c
+reward_type: difference
+avg_reward: -235.9
+avg_waiting_time: 12.1

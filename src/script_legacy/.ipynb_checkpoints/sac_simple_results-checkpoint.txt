@@ -1,0 +1,4 @@
+algorithm: sac
+reward_type: simple
+avg_reward: -245.7
+avg_waiting_time: 13.1
